@@ -21,7 +21,6 @@ public class CustomAccessDecisionVoter extends AbstractAccessDecisionVoter {
     protected void checkPermission(AccessDecisionVoterContext accessDecisionVoterContext,
             Set<SecurityViolation> violations)
     {
-		logger.info("perms" + accessDecisionVoterContext.getSource());
         if(ssoSession.getSubject() == null) {
         	violations.add(newSecurityViolation("must be logged in"));
         }
